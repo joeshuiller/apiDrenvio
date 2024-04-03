@@ -39,9 +39,8 @@ const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const https = __importStar(require("https"));
 const fs_1 = __importDefault(require("fs"));
-const config_1 = require("../src/config");
-const socket_1 = __importDefault(require("../src/socket/socket"));
 const path_1 = __importDefault(require("path"));
+const config_1 = require("../src/db/config");
 class Server {
     constructor() {
         this.https_options = {
@@ -54,10 +53,8 @@ class Server {
         };
         this.PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
         this.HOST = process.env.HOST ? process.env.HOST : "localhost";
-        this.serverIO = socket_1.default.instance;
         this.app = (0, express_1.default)();
         this.httpsServer = https.createServer(this.https_options, this.app);
-        this.serverIO.IOServerList(this.httpsServer);
     }
     static get instance() {
         return this._intance || (this._intance = new this());
@@ -67,11 +64,7 @@ class Server {
             dotenv_1.default.config();
             const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
             const HOST = process.env.HOST ? process.env.HOST : "localhost";
-            yield config_1.sequelize.authenticate().then(() => {
-                console.log('Connection has been established successfully.');
-            }).catch((error) => {
-                console.error('Unable to connect to the database: ', error);
-            });
+            (0, config_1.connectDB)();
             this.httpsServer.listen(PORT, HOST, function () {
                 console.log(`Server is running on port ${HOST}:${PORT}.`);
             }).on("error", (err) => {

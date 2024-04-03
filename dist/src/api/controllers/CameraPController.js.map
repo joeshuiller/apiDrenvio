@@ -1,1 +1,0 @@
-{"version":3,"file":"CameraPController.js","sourceRoot":"","sources":["../../../../src/api/controllers/CameraPController.ts"],"names":[],"mappings":";;;AACA,SAAgB,OAAO,CAAC,GAAY,EAAE,GAAa;IAChD,OAAO,GAAG,CAAC,MAAM,CAAC,GAAG,CAAC,CAAC,IAAI,CAAC;QACzB,OAAO,EAAE,iBAAiB;QAC1B,UAAU,EAAE,GAAG,CAAC,IAAI;KACrB,CAAC,CAAC;AACP,CAAC;AALD,0BAKC"}
