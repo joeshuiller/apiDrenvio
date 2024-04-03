@@ -1,0 +1,13 @@
+[req]
+default_bits = 2048
+prompt = no
+default_md = sha256
+distinguished_name = dn
+[dn]
+C=CO
+ST=ANT
+L=MED
+O=SOFTSAENZ
+OU=Development
+emailAddress=gerente@softsaenz.com
+CN = localhost:3010

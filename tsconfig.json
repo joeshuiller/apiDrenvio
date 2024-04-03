@@ -1,0 +1,36 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es2016",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "noUnusedLocals": true,
+    "declaration": false,
+    "pretty": true,
+    "strictNullChecks": true,
+    "skipLibCheck": true,
+    "strictPropertyInitialization": true
+  },
+  "lib": ["es2015"],
+  "types": [
+    "node",
+    "mocha"
+  ],
+  
+  "typeRoots": [
+      // Keep whatever you had around before.
+      "./some-custom-types/",
+
+      // You might need your local 'node_modules/@types'.
+      "./node_modules/@types",
+
+      // You might also need to specify a shared 'node_modules/@types'
+      // if you're using a "monorepo" layout.
+      "../../node_modules/@types",
+  ]
+}
